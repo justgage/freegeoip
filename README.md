@@ -1,5 +1,23 @@
 # freegeoip
 
+This is an Alpine version of freegioip (now called "ipstack").
+
+To run:
+
+```
+docker build . -t freegeoip # only the first time
+
+docker run -d -p 1234:8080 freegeoip # -d is to run int the background
+```
+
+Make sure to update Review Rocket's env to be:
+```
+FREEGEOIP_URL=http://localhost:1234
+```
+
+<details>
+ <summary>Old Docs</summary>
+
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 This is the source code of the freegeoip software. It contains both the web server that empowers freegeoip.net, and a package for the [Go](http://golang.org) programming language that enables any web server to support IP geolocation with a simple and clean API.
@@ -192,3 +210,6 @@ Install the web server:
 	go install github.com/apilayer/freegeoip/cmd/freegeoip
 
 Test coverage is quite good, and test code may help you find the stuff you need.
+
+</details>
+
